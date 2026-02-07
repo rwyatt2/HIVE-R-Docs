@@ -21,17 +21,28 @@ const config = {
 
   // Set the production url of your site here
   // Set the production url of your site here
-  url: 'https://hive-r.com',
+  // Set the production url of your site here
+  url: 'https://HIVE-R.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/HIVE-R-Docs/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  onBrokenLinks: 'throw',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'HIVE-R', // Usually your GitHub org/user name.
   projectName: 'HIVE-R-Docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  trailingSlash: false,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
