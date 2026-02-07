@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-production-readiness/phase-2-cost-monitoring" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Phase 2: Cost Monitoring Infrastructure | HIVE-R Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Phase 2: Cost Monitoring Infrastructure | HIVE-R Docs"><meta data-rh="true" name="description" content="⏱️ Time: 6-8 hours"><meta data-rh="true" property="og:description" content="⏱️ Time: 6-8 hours"><link data-rh="true" rel="icon" href="/HIVE-R-Docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring" hreflang="en"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Production Readiness","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/category/production-readiness"},{"@type":"ListItem","position":2,"name":"Phase 2: Cost Monitoring Infrastructure","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"}]}</script><link rel="alternate" type="application/rss+xml" href="/HIVE-R-Docs/blog/rss.xml" title="HIVE-R Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/HIVE-R-Docs/blog/atom.xml" title="HIVE-R Docs Atom Feed"><link rel="stylesheet" href="/HIVE-R-Docs/assets/css/styles.9072f9ea.css">
+<script src="/HIVE-R-Docs/assets/js/runtime~main.1d151edc.js" defer="defer"></script>
+<script src="/HIVE-R-Docs/assets/js/main.75b505dd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/HIVE-R-Docs/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/HIVE-R-Docs/"><div class="navbar__logo"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">HIVE-R Docs</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/HIVE-R-Docs/docs/intro">Tutorial</a><a class="navbar__item navbar__link" href="/HIVE-R-Docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/HIVE-R-Docs/docs/intro"><span title="Tutorial Intro" class="linkLabel_WmDU">Tutorial Intro</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/HIVE-R-Docs/docs/category/production-readiness"><span title="Production Readiness" class="categoryLinkLabel_W154">Production Readiness</span></a><button aria-label="Collapse sidebar category &#x27;Production Readiness&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/overview"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-0-preflight"><span title="Phase 0: Pre-Flight Checklist" class="linkLabel_WmDU">Phase 0: Pre-Flight Checklist</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-1-security"><span title="Phase 1: Emergency Security Fixes" class="linkLabel_WmDU">Phase 1: Emergency Security Fixes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"><span title="Phase 2: Cost Monitoring Infrastructure" class="linkLabel_WmDU">Phase 2: Cost Monitoring Infrastructure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-3-test-suite"><span title="Phase 3: Test Suite Generation" class="linkLabel_WmDU">Phase 3: Test Suite Generation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-4-reliability"><span title="Phase 4: Reliability &amp; Fallbacks" class="linkLabel_WmDU">Phase 4: Reliability &amp; Fallbacks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-5-observability"><span title="Phase 5: Observability Stack" class="linkLabel_WmDU">Phase 5: Observability Stack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-6-performance"><span title="Phase 6: Performance Optimization" class="linkLabel_WmDU">Phase 6: Performance Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"><span title="Phase 7: CI/CD &amp; Automation" class="linkLabel_WmDU">Phase 7: CI/CD &amp; Automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-8-deployment"><span title="Phase 8: Production Deployment" class="linkLabel_WmDU">Phase 8: Production Deployment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/appendix"><span title="Appendix: Troubleshooting" class="linkLabel_WmDU">Appendix: Troubleshooting</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---basics"><span title="Tutorial - Basics" class="categoryLinkLabel_W154">Tutorial - Basics</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---extras"><span title="Tutorial - Extras" class="categoryLinkLabel_W154">Tutorial - Extras</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/HIVE-R-Docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/HIVE-R-Docs/docs/category/production-readiness"><span>Production Readiness</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Phase 2: Cost Monitoring Infrastructure</span></li></ul></nav><div class="theme-doc-markdown markdown"><p>**</p>
+<p><strong>⏱️ Time</strong>: 6-8 hours</p>
+<p><strong>💰 Budget</strong>: $10-15</p>
+<p><strong>🎯 Goal</strong>: Real-time visibility into AI API costs</p>
+<p><strong>🤖 AI Workers</strong>: HIVE-R Builder + Data Analyst agents</p>
+<p><strong>💰 Step 2.1: Create Cost Tracking Schema</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the HIVE-R swarm.</p>
+<p>CONTEXT:</p>
+<p>We need to track every LLM API call with: agent name, model, tokens in/out, cost, timestamp, latency.</p>
+<p>TASK:</p>
+<p>Data Analyst agent: Design optimal schema for cost tracking</p>
+<p>  - What fields do we need?</p>
+<p>  - What indexes for fast queries?</p>
+<p>  - Daily/weekly/monthly aggregation strategy?</p>
+<p>Builder agent: Implement the schema</p>
+<p>  - Update src/lib/db.ts (or create new migration)</p>
+<p>  - Add TypeScript types</p>
+<p>  - Create helper functions: logUsage(), getDailyCost(), getAgentCosts()</p>
+<p>REQUIREMENTS:</p>
+<ul>
+<li class="">
+<p>Compatible with existing SQLite database</p>
+</li>
+<li class="">
+<p>Efficient queries (add indexes)</p>
+</li>
+<li class="">
+<p>No breaking changes to existing tables</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Schema in docs/architecture/cost-tracking-schema.md</p>
+</li>
+<li class="">
+<p>Migration script: scripts/migrations/001-add-cost-tracking.sql</p>
+</li>
+<li class="">
+<p>TypeScript types: src/types/cost-tracking.ts</p>
+</li>
+<li class="">
+<p>Helper functions: src/lib/cost-tracker.ts</p>
+</li>
+<li class="">
+<p>Tests: tests/lib/cost-tracker.test.ts</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the schema design:</p>
+<p>☐ Includes all necessary fields (see analysis section 5.1)</p>
+<p>☐ Has indexes on timestamp and agent name (for fast queries)</p>
+<p>☐ Migration is reversible (has DOWN script)</p>
+<p><strong>Example of what you&#x27;re looking for</strong>:</p>
+<p>CREATE TABLE IF NOT EXISTS token_usage (</p>
+<p>  id INTEGER PRIMARY KEY AUTOINCREMENT,</p>
+<p>  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,</p>
+<p>  agent_name TEXT NOT NULL,</p>
+<p>  model TEXT NOT NULL,</p>
+<p>  tokens_input INTEGER,</p>
+<p>  tokens_output INTEGER,</p>
+<p>  cost_usd REAL,</p>
+<p>  latency_ms INTEGER,</p>
+<p>  user_id TEXT,</p>
+<p>  session_id TEXT</p>
+<p>);</p>
+<p>CREATE INDEX idx_token_usage_timestamp ON token_usage(timestamp);</p>
+<p>CREATE INDEX idx_token_usage_agent ON token_usage(agent_name);</p>
+<p><strong>Approve</strong>: &quot;Schema looks good, proceed with implementation&quot;</p>
+<p><strong>Test</strong>:</p>
+<header><h1>Run migration</h1></header>
+<p>npm run db<!-- -->:migrate</p>
+<h1>Verify table exists</h1>
+<p>sqlite3 data/hive.db &quot;SELECT sql FROM sqlite_master WHERE name=&#x27;token_usage&#x27;;&quot;</p>
+<h1>Run tests</h1>
+<p>npm test tests/lib/cost-tracker.test.ts</p>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Migration runs successfully</p>
+<p>☐ Table has correct schema</p>
+<p>☐ Indexes created</p>
+<p>☐ Tests pass</p>
+<p><strong>📊 Log Cost</strong>: ~$0.08 (25K tokens)</p>
+<p><strong>📊 Step 2.2: Integrate Cost Tracking Middleware</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor, open src/index.ts):</p>
+<p>Consult the Builder agent.</p>
+<p>CONTEXT:</p>
+<p>We have cost tracking functions (src/lib/cost-tracker.ts) but they&#x27;re not hooked into actual LLM calls.</p>
+<p>TASK:</p>
+<ol>
+<li class="">
+<p>Create middleware that wraps every LLM call</p>
+</li>
+<li class="">
+<p>Extract token usage from LangChain response metadata</p>
+</li>
+<li class="">
+<p>Calculate cost based on model pricing</p>
+</li>
+<li class="">
+<p>Log to token_usage table</p>
+</li>
+<li class="">
+<p>Check against daily budget limit ($50 default)</p>
+</li>
+<li class="">
+<p>Throw error if budget exceeded</p>
+</li>
+</ol>
+<p>PRICING (hardcode these):</p>
+<ul>
+<li class="">
+<p>gpt-4o: $0.005 input, $0.015 output (per 1K tokens)</p>
+</li>
+<li class="">
+<p>gpt-4o-mini: $0.00015 input, $0.0006 output</p>
+</li>
+<li class="">
+<p>claude-3-5-sonnet: $0.003 input, $0.015 output</p>
+</li>
+<li class="">
+<p>claude-3-haiku: $0.00025 input, $0.00125 output</p>
+</li>
+</ul>
+<p>INTEGRATION POINTS:</p>
+<ul>
+<li class="">
+<p>src/agents/router.ts (wraps GPT-4o call)</p>
+</li>
+<li class="">
+<p>src/agents/builder.ts (wraps Claude call)</p>
+</li>
+<li class="">
+<p>All other agent files</p>
+</li>
+</ul>
+<p>REQUIREMENTS:</p>
+<ul>
+<li class="">
+<p>Use LangChain callbacks to get token counts</p>
+</li>
+<li class="">
+<p>Minimal performance overhead</p>
+</li>
+<li class="">
+<p>Graceful failure (log error but don&#x27;t break request)</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Middleware: src/middleware/cost-tracking.ts</p>
+</li>
+<li class="">
+<p>Integration in all agent files</p>
+</li>
+<li class="">
+<p>Budget config: DAILY_BUDGET in .env</p>
+</li>
+<li class="">
+<p>Tests with mocked LLM calls</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Check the integration approach:</p>
+<p>☐ Uses LangChain callbacks (not custom parsing)</p>
+<p>☐ Pricing constants are correct</p>
+<p>☐ Budget check happens AFTER logging (so you see what caused overage)</p>
+<p>☐ Doesn&#x27;t slow down requests significantly</p>
+<p><strong>Test manually</strong>:</p>
+<h1>Set low budget for testing</h1>
+<p>echo &quot;DAILY_BUDGET=0.10&quot; &gt;&gt; .env</p>
+<h1>Make several requests until budget exceeded</h1>
+<p>curl -X POST <a href="http://localhost:3000/chat" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/chat</a> \</p>
+<p>  -H &quot;Authorization: Bearer $TOKEN&quot; \</p>
+<p>  -d &#x27;{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Hello&quot;}]}&#x27;</p>
+<h1>Should eventually return budget exceeded error</h1>
+<h1>Check logs</h1>
+<p>sqlite3 data/hive.db &quot;SELECT SUM(cost_usd) FROM token_usage WHERE date(timestamp) = date(&#x27;now&#x27;);&quot;</p>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Each LLM call logs to token_usage table</p>
+<p>☐ Costs calculated accurately</p>
+<p>☐ Budget enforcement works</p>
+<p>☐ Performance &lt;10ms overhead per call</p>
+<p><strong>📊 Log Cost</strong>: ~$0.10 (30K tokens)</p>
+<p><strong>📈 Step 2.3: Build Cost Dashboard API</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the Data Analyst and Builder agents.</p>
+<p>CONTEXT:</p>
+<p>We&#x27;re tracking costs in the database. Now we need API endpoints to visualize them.</p>
+<p>TASK:</p>
+<p>Data Analyst: Design queries for these views:</p>
+<p>  - Today&#x27;s total cost</p>
+<p>  - Cost per agent (today/week/month)</p>
+<p>  - Cost trend over time (daily aggregates)</p>
+<p>  - Top 5 most expensive queries</p>
+<p>  - Projected monthly cost (based on current burn rate)</p>
+<p>Builder: Implement REST API endpoints:</p>
+<p>  - GET /api/admin/costs/today</p>
+<p>  - GET /api/admin/costs/by-agent?period=today|week|month</p>
+<p>  - GET /api/admin/costs/trend?days=30</p>
+<p>  - GET /api/admin/costs/top-queries?limit=10</p>
+<p>  - GET /api/admin/costs/projection</p>
+<p>REQUIREMENTS:</p>
+<ul>
+<li class="">
+<p>Require admin authentication (not all users)</p>
+</li>
+<li class="">
+<p>Efficient queries (use indexes)</p>
+</li>
+<li class="">
+<p>Cache results for 5 minutes (Redis or in-memory)</p>
+</li>
+<li class="">
+<p>Return JSON with clear structure</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>New router: src/routers/admin/costs.ts</p>
+</li>
+<li class="">
+<p>Integration in src/routers/admin.ts</p>
+</li>
+<li class="">
+<p>API documentation: docs/api/costs.md</p>
+</li>
+<li class="">
+<p>Tests: tests/routers/admin/costs.test.ts</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the query designs:</p>
+<p>☐ Use proper SQL aggregations (not loading all rows into memory)</p>
+<p>☐ Have LIMIT clauses to prevent huge responses</p>
+<p>☐ Cache expensive queries</p>
+<p><strong>Test</strong>:</p>
+<h1>Generate some usage data first</h1>
+<p>npm run scripts/generate-test-data.ts</p>
+<h1>Test endpoints</h1>
+<p>curl <a href="http://localhost:3000/api/admin/costs/today" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/api/admin/costs/today</a> \</p>
+<p>  -H &quot;Authorization: Bearer $ADMIN_TOKEN&quot; | jq</p>
+<h1>Should return:</h1>
+<h1>{</h1>
+<h1>  &quot;date&quot;: &quot;2026-02-07&quot;,</h1>
+<h1>  &quot;total_cost&quot;: 1.25,</h1>
+<h1>  &quot;total_requests&quot;: 47,</h1>
+<h1>  &quot;by_agent&quot;: {...}</h1>
+<h1>}</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ All endpoints return valid JSON</p>
+<p>☐ Queries are fast (&lt;100ms)</p>
+<p>☐ Auth required (401 without token)</p>
+<p>☐ Numbers match database totals</p>
+<p><strong>📊 Log Cost</strong>: ~$0.12 (35K tokens)</p>
+<p><strong>🎨 Step 2.4: Build Cost Dashboard Frontend</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor, open client/src/pages/Dashboard.tsx):</p>
+<p>Consult the Designer and Builder agents.</p>
+<p>CONTEXT:</p>
+<p>We have cost API endpoints. Now we need a dashboard to visualize them.</p>
+<p>TASK:</p>
+<p>Designer: Propose dashboard layout with:</p>
+<p>  - Big number cards (today&#x27;s cost, this month, projection)</p>
+<p>  - Bar chart (cost per agent)</p>
+<p>  - Line chart (cost trend over 30 days)</p>
+<p>  - Table (top 10 expensive queries)</p>
+<p>  - Budget gauge (e.g., $45 / $50 daily limit)</p>
+<p>Builder: Implement React components:</p>
+<p>  - Use existing UI components from client/src/components/</p>
+<p>  - Fetch data from /api/admin/costs/* endpoints</p>
+<p>  - Auto-refresh every 30 seconds</p>
+<p>  - Loading states and error handling</p>
+<p>  - Responsive (mobile + desktop)</p>
+<p>REQUIREMENTS:</p>
+<ul>
+<li class="">
+<p>Match existing design system (check client/src/styles/)</p>
+</li>
+<li class="">
+<p>Use Chart.js or Recharts for visualizations</p>
+</li>
+<li class="">
+<p>No external design libraries (use your existing CSS)</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Updated Dashboard.tsx with cost metrics</p>
+</li>
+<li class="">
+<p>New component: CostDashboard.tsx</p>
+</li>
+<li class="">
+<p>Chart components (if needed)</p>
+</li>
+<li class="">
+<p>CSS in Dashboard.module.css</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the design mockup (Designer will provide):</p>
+<p>☐ Layout is clean and readable</p>
+<p>☐ Most important metric (today&#x27;s cost) is prominent</p>
+<p>☐ Color coding (green = under budget, yellow = approaching, red = over)</p>
+<p><strong>Approve</strong>: &quot;Design approved, implement it&quot;</p>
+<p><strong>Test</strong>:</p>
+<h1>Start frontend dev server</h1>
+<p>cd client &amp;&amp; npm run dev</p>
+<h1>Open <a href="http://localhost:5173" target="_blank" rel="noopener noreferrer" class="">http://localhost:5173</a></h1>
+<h1>Navigate to Dashboard</h1>
+<h1>Should see cost metrics updating</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Dashboard loads without errors</p>
+<p>☐ Numbers match API responses</p>
+<p>☐ Charts render correctly</p>
+<p>☐ Auto-refresh works</p>
+<p>☐ Mobile responsive</p>
+<p><strong>📊 Log Cost</strong>: ~$0.15 (45K tokens - includes frontend code)</p>
+<p><strong>🚨 Step 2.5: Implement Budget Alerts</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE and Builder agents.</p>
+<p>CONTEXT:</p>
+<p>We can track costs, but we need proactive alerts BEFORE we blow the budget.</p>
+<p>TASK:</p>
+<p>Design alert system with:</p>
+<p>  - Check every 10 minutes (cron job or setInterval)</p>
+<p>  - Alert thresholds: 50%, 80%, 100%, 120% of daily budget</p>
+<p>  - Alert channels: Log to console, Send to Slack (if SLACK_WEBHOOK configured), Email (optional)</p>
+<p>Implementation:</p>
+<p>  - New service: src/services/budget-alerts.ts</p>
+<p>  - Tracks which alerts have fired (don&#x27;t spam same alert)</p>
+<p>  - Graceful degradation (if Slack fails, still log)</p>
+<p>Integration:</p>
+<p>  - Start service on server boot</p>
+<p>  - Expose /api/admin/alerts endpoint to see history</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Budget alert service</p>
+</li>
+<li class="">
+<p>Slack integration (optional)</p>
+</li>
+<li class="">
+<p>Alert history API</p>
+</li>
+<li class="">
+<p>Documentation in docs/operations/cost-alerts.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review alert logic:</p>
+<p>☐ Won&#x27;t spam (tracks already-sent alerts)</p>
+<p>☐ Has kill switch (can disable via env var)</p>
+<p>☐ Logs to file as backup (in case Slack is down)</p>
+<p><strong>Test</strong>:</p>
+<h1>Set very low budget to trigger alert</h1>
+<p>echo &quot;DAILY_BUDGET=0.05&quot; &gt;&gt; .env</p>
+<p>npm run dev</p>
+<h1>Make requests until you hit 50% of budget</h1>
+<h1>Check console logs for alert</h1>
+<h1>If Slack configured:</h1>
+<h1>Check your Slack channel for alert message</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Alerts fire at correct thresholds</p>
+<p>☐ No duplicate alerts in same period</p>
+<p>☐ Slack integration works (if configured)</p>
+<p>☐ System doesn&#x27;t crash if Slack fails</p>
+<p><strong>📊 Log Cost</strong>: ~$0.08 (25K tokens)</p>
+<p><strong>✅ Phase 2 Complete When:</strong></p>
+<p>☐ Cost tracking logs every LLM call</p>
+<p>☐ Dashboard shows real-time costs</p>
+<p>☐ Budget alerts fire correctly</p>
+<p>☐ APIs documented</p>
+<p>☐ Tests passing</p>
+<p>☐ Total cost &lt;$15 for Phase 2</p>
+<p><strong>💡 Key Insight</strong>: You can now see exactly where money is going and prevent runaway costs.</p>
+<p><strong>📸 Take Screenshot</strong>: Of your cost dashboard showing real data. This is your proof of progress.</p>
+<p>**</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/production-readiness/03-phase-2-cost-monitoring.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/HIVE-R-Docs/docs/production-readiness/phase-1-security"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Phase 1: Emergency Security Fixes</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/HIVE-R-Docs/docs/production-readiness/phase-3-test-suite"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Phase 3: Test Suite Generation</div></a></nav></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 HIVE-R. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-production-readiness/phase-5-observability" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Phase 5: Observability Stack | HIVE-R Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-5-observability"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Phase 5: Observability Stack | HIVE-R Docs"><meta data-rh="true" name="description" content="⏱️ Time: 10-12 hours"><meta data-rh="true" property="og:description" content="⏱️ Time: 10-12 hours"><link data-rh="true" rel="icon" href="/HIVE-R-Docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-5-observability"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-5-observability" hreflang="en"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-5-observability" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Production Readiness","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/category/production-readiness"},{"@type":"ListItem","position":2,"name":"Phase 5: Observability Stack","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-5-observability"}]}</script><link rel="alternate" type="application/rss+xml" href="/HIVE-R-Docs/blog/rss.xml" title="HIVE-R Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/HIVE-R-Docs/blog/atom.xml" title="HIVE-R Docs Atom Feed"><link rel="stylesheet" href="/HIVE-R-Docs/assets/css/styles.9072f9ea.css">
+<script src="/HIVE-R-Docs/assets/js/runtime~main.1d151edc.js" defer="defer"></script>
+<script src="/HIVE-R-Docs/assets/js/main.75b505dd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/HIVE-R-Docs/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/HIVE-R-Docs/"><div class="navbar__logo"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">HIVE-R Docs</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/HIVE-R-Docs/docs/intro">Tutorial</a><a class="navbar__item navbar__link" href="/HIVE-R-Docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/HIVE-R-Docs/docs/intro"><span title="Tutorial Intro" class="linkLabel_WmDU">Tutorial Intro</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/HIVE-R-Docs/docs/category/production-readiness"><span title="Production Readiness" class="categoryLinkLabel_W154">Production Readiness</span></a><button aria-label="Collapse sidebar category &#x27;Production Readiness&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/overview"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-0-preflight"><span title="Phase 0: Pre-Flight Checklist" class="linkLabel_WmDU">Phase 0: Pre-Flight Checklist</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-1-security"><span title="Phase 1: Emergency Security Fixes" class="linkLabel_WmDU">Phase 1: Emergency Security Fixes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"><span title="Phase 2: Cost Monitoring Infrastructure" class="linkLabel_WmDU">Phase 2: Cost Monitoring Infrastructure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-3-test-suite"><span title="Phase 3: Test Suite Generation" class="linkLabel_WmDU">Phase 3: Test Suite Generation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-4-reliability"><span title="Phase 4: Reliability &amp; Fallbacks" class="linkLabel_WmDU">Phase 4: Reliability &amp; Fallbacks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-5-observability"><span title="Phase 5: Observability Stack" class="linkLabel_WmDU">Phase 5: Observability Stack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-6-performance"><span title="Phase 6: Performance Optimization" class="linkLabel_WmDU">Phase 6: Performance Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"><span title="Phase 7: CI/CD &amp; Automation" class="linkLabel_WmDU">Phase 7: CI/CD &amp; Automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-8-deployment"><span title="Phase 8: Production Deployment" class="linkLabel_WmDU">Phase 8: Production Deployment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/appendix"><span title="Appendix: Troubleshooting" class="linkLabel_WmDU">Appendix: Troubleshooting</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---basics"><span title="Tutorial - Basics" class="categoryLinkLabel_W154">Tutorial - Basics</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---extras"><span title="Tutorial - Extras" class="categoryLinkLabel_W154">Tutorial - Extras</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/HIVE-R-Docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/HIVE-R-Docs/docs/category/production-readiness"><span>Production Readiness</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Phase 5: Observability Stack</span></li></ul></nav><div class="theme-doc-markdown markdown"><p>**</p>
+<p><strong>⏱️ Time</strong>: 10-12 hours</p>
+<p><strong>💰 Budget</strong>: $20-25</p>
+<p><strong>🎯 Goal</strong>: Deep visibility into system behavior</p>
+<p><strong>🤖 AI Workers</strong>: HIVE-R SRE + Data Analyst + Builder agents</p>
+<p><strong>📊 Step 5.1: Implement Structured Logging</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE and Builder agents.</p>
+<p>CONTEXT:</p>
+<p>We&#x27;re using console.log() scattered everywhere. This is unmaintainable in production.</p>
+<p>TASK:</p>
+<p>Migrate to structured JSON logging with Pino:</p>
+<p>  1. Replace all console.log/error/warn with logger</p>
+<p>  2. Add context to every log (requestId, userId, agentName)</p>
+<p>  3. Configure log levels by environment (debug in dev, info in prod)</p>
+<p>  4. Add log rotation (don&#x27;t fill disk)</p>
+<p>  5. Format for log aggregation tools (ELK, Datadog)</p>
+<p>LOG STRUCTURE:</p>
+<p>{</p>
+<p>  &quot;level&quot;: &quot;info&quot;,</p>
+<p>  &quot;time&quot;: &quot;2026-02-07T12:34:56.789Z&quot;,</p>
+<p>  &quot;requestId&quot;: &quot;req-123&quot;,</p>
+<p>  &quot;userId&quot;: &quot;user-456&quot;,</p>
+<p>  &quot;agentName&quot;: &quot;builder&quot;,</p>
+<p>  &quot;msg&quot;: &quot;Agent invocation started&quot;,</p>
+<p>  &quot;duration&quot;: 1234,</p>
+<p>  &quot;tokens&quot;: 500,</p>
+<p>  &quot;cost&quot;: 0.015</p>
+<p>}</p>
+<p>IMPLEMENTATION:</p>
+<ul>
+<li class="">
+<p>Install: pino, pino-pretty (dev), pino-rotating-file-stream</p>
+</li>
+<li class="">
+<p>Create logger singleton: src/lib/logger.ts</p>
+</li>
+<li class="">
+<p>Add middleware to inject requestId</p>
+</li>
+<li class="">
+<p>Update ALL files that use console.log</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Logger configuration</p>
+</li>
+<li class="">
+<p>Migration of all console.log calls</p>
+</li>
+<li class="">
+<p>Log rotation setup (daily, keep 7 days)</p>
+</li>
+<li class="">
+<p>Environment-based log levels</p>
+</li>
+<li class="">
+<p>Documentation: docs/operations/logging.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the logger configuration:</p>
+<p>☐ Uses JSON in production (for parsing)</p>
+<p>☐ Uses pretty-print in development (for readability)</p>
+<p>☐ RequestId propagates through all logs in a request</p>
+<p>☐ Sensitive data not logged (API keys, passwords)</p>
+<p><strong>Test</strong>:</p>
+<header><h1>Start server, make request</h1></header>
+<p>npm run dev</p>
+<p>curl <a href="http://localhost:3000/chat" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/chat</a> -d &#x27;{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;test&quot;}]}&#x27;</p>
+<h1>Check logs (should be JSON in one line)</h1>
+<p>tail -f logs/hive.log | jq</p>
+<h1>Should see structured logs with all context fields</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ All console.logs replaced</p>
+<p>☐ Logs are structured JSON</p>
+<p>☐ RequestId tracks through multi-agent flow</p>
+<p>☐ Log rotation working (check after 24h)</p>
+<p>☐ No sensitive data in logs</p>
+<p><strong>📊 Log Cost</strong>: ~$0.20 (60K tokens - lots of file changes)</p>
+<p><strong>📈 Step 5.2: Add Prometheus Metrics</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE agent.</p>
+<p>CONTEXT:</p>
+<p>Logs tell us what happened. Metrics tell us trends over time.</p>
+<p>TASK:</p>
+<p>Implement Prometheus metrics for:</p>
+<p>  - Request rate (requests/sec by endpoint)</p>
+<p>  - Response latency (histogram: p50, p95, p99)</p>
+<p>  - Error rate (% of requests that failed)</p>
+<p>  - Agent invocations (counter by agent name)</p>
+<p>  - Token usage (counter by model)</p>
+<p>  - Cost (gauge: current spend rate)</p>
+<p>  - Circuit breaker state (gauge: 0=closed, 1=open)</p>
+<p>IMPLEMENTATION:</p>
+<ul>
+<li class="">
+<p>Install: prom-client</p>
+</li>
+<li class="">
+<p>Create metrics registry: src/lib/metrics.ts</p>
+</li>
+<li class="">
+<p>Add middleware to track HTTP metrics</p>
+</li>
+<li class="">
+<p>Expose /metrics endpoint (for Prometheus scraper)</p>
+</li>
+<li class="">
+<p>Custom metrics for agent-specific tracking</p>
+</li>
+</ul>
+<p>METRIC NAMING:</p>
+<p>Follow Prometheus conventions:</p>
+<ul>
+<li class="">
+<p>hive_http_requests_total (counter)</p>
+</li>
+<li class="">
+<p>hive_http_request_duration_seconds (histogram)</p>
+</li>
+<li class="">
+<p>hive_agent_invocations_total (counter)</p>
+</li>
+<li class="">
+<p>hive_token_usage_total (counter)</p>
+</li>
+<li class="">
+<p>hive_cost_dollars (gauge)</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Metrics registry and instrumentation</p>
+</li>
+<li class="">
+<p>/metrics endpoint</p>
+</li>
+<li class="">
+<p>Grafana dashboard JSON (for import)</p>
+</li>
+<li class="">
+<p>Documentation on adding custom metrics</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the metrics design:</p>
+<p>☐ Covers the key system behaviors</p>
+<p>☐ Has labels for filtering (agent, model, status_code)</p>
+<p>☐ Histogram buckets appropriate (0.1s, 0.5s, 1s, 5s, 10s)</p>
+<p>☐ /metrics endpoint doesn&#x27;t require auth (Prometheus needs it)</p>
+<p><strong>Test</strong>:</p>
+<h1>Start server</h1>
+<p>npm run dev</p>
+<h1>Make some requests</h1>
+<p>for i in {1..10}; do</p>
+<p>  curl <a href="http://localhost:3000/chat" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/chat</a> -d &#x27;{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;test&quot;}]}&#x27;</p>
+<p>done</p>
+<h1>Check metrics endpoint</h1>
+<p>curl <a href="http://localhost:3000/metrics" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/metrics</a></p>
+<h1>Should see Prometheus format:</h1>
+<h1>hive_http_requests_total{method=&quot;POST&quot;,path=&quot;/chat&quot;,status=&quot;200&quot;} 10</h1>
+<h1>hive_agent_invocations_total{agent=&quot;router&quot;} 10</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ /metrics endpoint returns valid Prometheus format</p>
+<p>☐ Metrics update in real-time</p>
+<p>☐ Includes both system and custom metrics</p>
+<p>☐ No performance impact (&lt;5ms per request)</p>
+<p><strong>📊 Log Cost</strong>: ~$0.12 (35K tokens)</p>
+<p><strong>📉 Step 5.3: Set Up Grafana Dashboard</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the Data Analyst and SRE agents.</p>
+<p>CONTEXT:</p>
+<p>We have metrics. Now we need visualization.</p>
+<p>TASK:</p>
+<p>Data Analyst: Design dashboard layout with panels for:</p>
+<p>  - Request rate (line chart, last 1h)</p>
+<p>  - Response latency (heatmap, p50/p95/p99)</p>
+<p>  - Error rate (gauge, % of requests)</p>
+<p>  - Agent usage (bar chart, invocations per agent)</p>
+<p>  - Token usage (stacked area, by model over time)</p>
+<p>  - Cost burn rate (line chart, $/hour)</p>
+<p>  - Circuit breaker status (status indicator)</p>
+<p>SRE: Create Grafana dashboard JSON:</p>
+<p>  - Use Prometheus as data source</p>
+<p>  - Auto-refresh every 30s</p>
+<p>  - Time range selector (1h, 6h, 24h, 7d)</p>
+<p>  - Variables for filtering (agent, model)</p>
+<p>  - Alert rules (error rate &gt;5%, cost &gt;$10/hour)</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Grafana dashboard JSON: grafana/dashboards/hive-overview.json</p>
+</li>
+<li class="">
+<p>Docker compose with Grafana + Prometheus</p>
+</li>
+<li class="">
+<p>Setup instructions: docs/operations/monitoring-setup.md</p>
+</li>
+<li class="">
+<p>Screenshot of dashboard for README</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the dashboard design (Data Analyst will provide mockup):</p>
+<p>☐ Most important metrics above the fold</p>
+<p>☐ Color coding (green=good, yellow=warning, red=critical)</p>
+<p>☐ Time range covers operational needs (1h for incidents, 7d for trends)</p>
+<p><strong>Setup Grafana</strong>:</p>
+<h1>Add to docker-compose.yml</h1>
+<p>cat &gt;&gt; docker-compose.yml &lt;&lt; &#x27;EOF&#x27;</p>
+<p>  prometheus:</p>
+<p>    image: prom/prometheus<!-- -->:latest</p>
+<p>    volumes:</p>
+<p>      - ./prometheus.yml:/etc/prometheus/prometheus.yml</p>
+<p>      - prometheus-data:/prometheus</p>
+<p>    ports:</p>
+<p>      - &quot;9090:9090&quot;</p>
+<p>  grafana:</p>
+<p>    image: grafana/grafana<!-- -->:latest</p>
+<p>    volumes:</p>
+<p>      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards</p>
+<p>      - ./grafana/datasources:/etc/grafana/provisioning/datasources</p>
+<p>      - grafana-data:/var/lib/grafana</p>
+<p>    ports:</p>
+<p>      - &quot;3001:3000&quot;</p>
+<p>    environment:</p>
+<p>      - GF_SECURITY_ADMIN_PASSWORD=admin</p>
+<p>EOF</p>
+<h1>Create Prometheus config</h1>
+<p>cat &gt; prometheus.yml &lt;&lt; &#x27;EOF&#x27;</p>
+<p>global:</p>
+<p>  scrape_interval: 15s</p>
+<p>scrape_configs:</p>
+<p>  - job_name: &#x27;hive&#x27;</p>
+<p>    static_configs:</p>
+<p>      - targets: [&#x27;host.docker.internal:3000&#x27;]</p>
+<p>EOF</p>
+<h1>Start monitoring stack</h1>
+<p>docker-compose up -d prometheus grafana</p>
+<p><strong>Access Grafana</strong>:</p>
+<ol>
+<li class="">
+<p>Open <a href="http://localhost:3001" target="_blank" rel="noopener noreferrer" class="">http://localhost:3001</a></p>
+</li>
+<li class="">
+<p>Login (admin/admin)</p>
+</li>
+<li class="">
+<p>Add Prometheus data source (<a href="http://prometheus:9090" target="_blank" rel="noopener noreferrer" class="">http://prometheus:9090</a>)</p>
+</li>
+<li class="">
+<p>Import dashboard JSON</p>
+</li>
+</ol>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Grafana loads dashboard</p>
+<p>☐ All panels show data</p>
+<p>☐ Metrics update in real-time</p>
+<p>☐ Alerts configured</p>
+<p><strong>📊 Log Cost</strong>: ~$0.10 (30K tokens)</p>
+<p><strong>🔍 Step 5.4: Implement Distributed Tracing</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE agent.</p>
+<p>CONTEXT:</p>
+<p>When a request flows through 5+ agents, we need to trace it end-to-end.</p>
+<p>TASK:</p>
+<p>Implement OpenTelemetry distributed tracing:</p>
+<p>  - Trace a request from entry (/chat) through all agent invocations</p>
+<p>  - Each agent span shows: name, duration, model used, tokens, cost</p>
+<p>  - Parent-child relationships visible (Router → Builder → Reviewer)</p>
+<p>  - Export traces to Jaeger (visualization)</p>
+<p>IMPLEMENTATION:</p>
+<ul>
+<li class="">
+<p>Install: @opentelemetry/api, @opentelemetry/sdk-node, @opentelemetry/exporter-jaeger</p>
+</li>
+<li class="">
+<p>Initialize tracer: src/lib/tracer.ts</p>
+</li>
+<li class="">
+<p>Instrument HTTP server (auto)</p>
+</li>
+<li class="">
+<p>Manually instrument agent invocations</p>
+</li>
+<li class="">
+<p>Propagate trace context through LangGraph state</p>
+</li>
+</ul>
+<p>SPAN ATTRIBUTES:</p>
+<ul>
+<li class="">
+<p>agent.name</p>
+</li>
+<li class="">
+<p>agent.model</p>
+</li>
+<li class="">
+<p>agent.tokens_in</p>
+</li>
+<li class="">
+<p>agent.tokens_out</p>
+</li>
+<li class="">
+<p>agent.cost</p>
+</li>
+<li class="">
+<p>agent.duration_ms</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Tracer initialization</p>
+</li>
+<li class="">
+<p>Agent instrumentation</p>
+</li>
+<li class="">
+<p>Jaeger setup in docker-compose</p>
+</li>
+<li class="">
+<p>Documentation: docs/operations/tracing.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the tracing approach:</p>
+<p>☐ Spans have meaningful names (not &quot;function1&quot;, &quot;function2&quot;)</p>
+<p>☐ Trace context propagates through async agent calls</p>
+<p>☐ Doesn&#x27;t add &gt;10ms latency per request</p>
+<p>☐ Sampling configured (don&#x27;t trace 100% in prod, maybe 10%)</p>
+<p><strong>Setup Jaeger</strong>:</p>
+<h1>Add to docker-compose.yml</h1>
+<p>cat &gt;&gt; docker-compose.yml &lt;&lt; &#x27;EOF&#x27;</p>
+<p>  jaeger:</p>
+<p>    image: jaegertracing/all-in-one<!-- -->:latest</p>
+<p>    ports:</p>
+<p>      - &quot;16686:16686&quot;  # UI</p>
+<p>      - &quot;14268:14268&quot;  # Collector</p>
+<p>    environment:</p>
+<p>      - COLLECTOR_ZIPKIN_HTTP_PORT=9411</p>
+<p>EOF</p>
+<p>docker-compose up -d jaeger</p>
+<p><strong>Test</strong>:</p>
+<h1>Make a request</h1>
+<p>curl <a href="http://localhost:3000/chat" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/chat</a> -d &#x27;{&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;build a button&quot;}]}&#x27;</p>
+<h1>Open Jaeger UI</h1>
+<p>open <a href="http://localhost:16686" target="_blank" rel="noopener noreferrer" class="">http://localhost:16686</a></p>
+<h1>Search for traces, select one</h1>
+<h1>Should see waterfall: Router → Builder → (other agents)</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Traces appear in Jaeger</p>
+<p>☐ Spans show parent-child relationships</p>
+<p>☐ Agent names and durations visible</p>
+<p>☐ Can trace a request through 5+ agents</p>
+<p><strong>📊 Log Cost</strong>: ~$0.15 (45K tokens)</p>
+<p><strong>🚨 Step 5.5: Configure Alerting</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE agent.</p>
+<p>CONTEXT:</p>
+<p>Metrics and dashboards are reactive. We need proactive alerts.</p>
+<p>TASK:</p>
+<p>Configure Prometheus alerting rules for:</p>
+<p>  - High error rate: &gt;5% of requests failing (5min average)</p>
+<p>  - High latency: p95 &gt;5 seconds (5min average)</p>
+<p>  - Agent failures: Any agent failing &gt;50% of time</p>
+<p>  - Cost spike: $/hour &gt;$20 (when monthly budget is $1500)</p>
+<p>  - Circuit breaker open: Any circuit open &gt;5 minutes</p>
+<p>  - Low disk space: &lt;10GB remaining</p>
+<p>ALERT ROUTING:</p>
+<ul>
+<li class="">
+<p>Critical: Page on-call (PagerDuty/Opsgenie)</p>
+</li>
+<li class="">
+<p>Warning: Slack notification</p>
+</li>
+<li class="">
+<p>Info: Log only</p>
+</li>
+</ul>
+<p>IMPLEMENTATION:</p>
+<ul>
+<li class="">
+<p>Prometheus alert rules: prometheus/alerts.yml</p>
+</li>
+<li class="">
+<p>Alertmanager config: prometheus/alertmanager.yml</p>
+</li>
+<li class="">
+<p>Slack webhook integration</p>
+</li>
+<li class="">
+<p>Test alerts with mock failures</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Alert rules file</p>
+</li>
+<li class="">
+<p>Alertmanager configuration</p>
+</li>
+<li class="">
+<p>Docker compose with Alertmanager</p>
+</li>
+<li class="">
+<p>Runbook links in alerts (so responder knows what to do)</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review alert thresholds:</p>
+<p>☐ Not too sensitive (won&#x27;t page for every hiccup)</p>
+<p>☐ Not too lenient (catches real issues)</p>
+<p>☐ Has runbook links (alerts are actionable)</p>
+<p>☐ Grouped to prevent alert storm (max 1 alert per 5min)</p>
+<p><strong>Setup Alertmanager</strong>:</p>
+<h1>Create alert rules</h1>
+<p>cat &gt; prometheus/alerts.yml &lt;&lt; &#x27;EOF&#x27;</p>
+<p>groups:</p>
+<p>  - name: hive_alerts</p>
+<p>    interval: 30s</p>
+<p>    rules:</p>
+<p>      - alert: HighErrorRate</p>
+<p>        expr: rate(hive_http_requests_total{status=~&quot;5..&quot;}[5m]) &gt; 0.05</p>
+<p>        for: 5m</p>
+<p>        labels:</p>
+<p>          severity: critical</p>
+<p>        annotations:</p>
+<p>          summary: &quot;High error rate: {{ $value }}%&quot;</p>
+<p>          runbook: &quot;<a href="https://github.com/you/hive-r/docs/runbook.md#high-error-rate" target="_blank" rel="noopener noreferrer" class="">https://github.com/you/hive-r/docs/runbook.md#high-error-rate</a>&quot;</p>
+<p>      - alert: HighCostBurn</p>
+<p>        expr: rate(hive_cost_dollars[1h]) * 3600 &gt; 20</p>
+<p>        for: 10m</p>
+<p>        labels:</p>
+<p>          severity: warning</p>
+<p>        annotations:</p>
+<p>          summary: &quot;Cost burn rate: ${{ $value }}/hour&quot;</p>
+<p>EOF</p>
+<h1>Add Alertmanager to docker-compose.yml</h1>
+<p>cat &gt;&gt; docker-compose.yml &lt;&lt; &#x27;EOF&#x27;</p>
+<p>  alertmanager:</p>
+<p>    image: prom/alertmanager<!-- -->:latest</p>
+<p>    volumes:</p>
+<p>      - ./prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml</p>
+<p>    ports:</p>
+<p>      - &quot;9093:9093&quot;</p>
+<p>EOF</p>
+<p><strong>Test alerts</strong>:</p>
+<h1>Trigger high error rate (stop database to cause errors)</h1>
+<p>docker stop hive-postgres</p>
+<h1>Make requests (should fail)</h1>
+<p>for i in {1..20}; do curl <a href="http://localhost:3000/chat" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000/chat</a>; done</p>
+<h1>Wait 5 minutes</h1>
+<h1>Check Alertmanager: <a href="http://localhost:9093" target="_blank" rel="noopener noreferrer" class="">http://localhost:9093</a></h1>
+<h1>Should see &quot;HighErrorRate&quot; alert firing</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Alerts fire correctly</p>
+<p>☐ Slack notifications work</p>
+<p>☐ Alerts resolve when issue fixed</p>
+<p>☐ No alert spam (grouped properly)</p>
+<p><strong>📊 Log Cost</strong>: ~$0.08 (25K tokens)</p>
+<p><strong>✅ Phase 5 Complete When:</strong></p>
+<p>☐ Structured logging active (all console.logs replaced)</p>
+<p>☐ Prometheus metrics exposed</p>
+<p>☐ Grafana dashboard showing real data</p>
+<p>☐ Distributed tracing working (Jaeger shows spans)</p>
+<p>☐ Alerting configured and tested</p>
+<p>☐ Monitoring stack runs in Docker</p>
+<p>☐ Total cost &lt;$25 for Phase 5</p>
+<p><strong>💡 Key Insight</strong>: You can now debug production issues 10x faster with full observability.</p>
+<p><strong>📸 Take Screenshot</strong>: Of Grafana dashboard + Jaeger trace for your portfolio/docs.</p>
+<p>**</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/production-readiness/06-phase-5-observability.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/HIVE-R-Docs/docs/production-readiness/phase-4-reliability"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Phase 4: Reliability &amp; Fallbacks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/HIVE-R-Docs/docs/production-readiness/phase-6-performance"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Phase 6: Performance Optimization</div></a></nav></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 HIVE-R. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

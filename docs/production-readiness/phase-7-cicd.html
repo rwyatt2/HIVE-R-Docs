@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-production-readiness/phase-7-cicd" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Phase 7: CI/CD &amp; Automation | HIVE-R Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rwyatt2.github.io/HIVE-R-Docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Phase 7: CI/CD &amp; Automation | HIVE-R Docs"><meta data-rh="true" name="description" content="⏱️ Time: 8-10 hours"><meta data-rh="true" property="og:description" content="⏱️ Time: 8-10 hours"><link data-rh="true" rel="icon" href="/HIVE-R-Docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-7-cicd" hreflang="en"><link data-rh="true" rel="alternate" href="https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-7-cicd" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Production Readiness","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/category/production-readiness"},{"@type":"ListItem","position":2,"name":"Phase 7: CI/CD & Automation","item":"https://rwyatt2.github.io/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"}]}</script><link rel="alternate" type="application/rss+xml" href="/HIVE-R-Docs/blog/rss.xml" title="HIVE-R Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/HIVE-R-Docs/blog/atom.xml" title="HIVE-R Docs Atom Feed"><link rel="stylesheet" href="/HIVE-R-Docs/assets/css/styles.9072f9ea.css">
+<script src="/HIVE-R-Docs/assets/js/runtime~main.1d151edc.js" defer="defer"></script>
+<script src="/HIVE-R-Docs/assets/js/main.75b505dd.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/HIVE-R-Docs/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/HIVE-R-Docs/"><div class="navbar__logo"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/HIVE-R-Docs/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">HIVE-R Docs</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/HIVE-R-Docs/docs/intro">Tutorial</a><a class="navbar__item navbar__link" href="/HIVE-R-Docs/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/HIVE-R-Docs/docs/intro"><span title="Tutorial Intro" class="linkLabel_WmDU">Tutorial Intro</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/HIVE-R-Docs/docs/category/production-readiness"><span title="Production Readiness" class="categoryLinkLabel_W154">Production Readiness</span></a><button aria-label="Collapse sidebar category &#x27;Production Readiness&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/overview"><span title="Overview" class="linkLabel_WmDU">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-0-preflight"><span title="Phase 0: Pre-Flight Checklist" class="linkLabel_WmDU">Phase 0: Pre-Flight Checklist</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-1-security"><span title="Phase 1: Emergency Security Fixes" class="linkLabel_WmDU">Phase 1: Emergency Security Fixes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-2-cost-monitoring"><span title="Phase 2: Cost Monitoring Infrastructure" class="linkLabel_WmDU">Phase 2: Cost Monitoring Infrastructure</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-3-test-suite"><span title="Phase 3: Test Suite Generation" class="linkLabel_WmDU">Phase 3: Test Suite Generation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-4-reliability"><span title="Phase 4: Reliability &amp; Fallbacks" class="linkLabel_WmDU">Phase 4: Reliability &amp; Fallbacks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-5-observability"><span title="Phase 5: Observability Stack" class="linkLabel_WmDU">Phase 5: Observability Stack</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-6-performance"><span title="Phase 6: Performance Optimization" class="linkLabel_WmDU">Phase 6: Performance Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-7-cicd"><span title="Phase 7: CI/CD &amp; Automation" class="linkLabel_WmDU">Phase 7: CI/CD &amp; Automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/phase-8-deployment"><span title="Phase 8: Production Deployment" class="linkLabel_WmDU">Phase 8: Production Deployment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/HIVE-R-Docs/docs/production-readiness/appendix"><span title="Appendix: Troubleshooting" class="linkLabel_WmDU">Appendix: Troubleshooting</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---basics"><span title="Tutorial - Basics" class="categoryLinkLabel_W154">Tutorial - Basics</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/HIVE-R-Docs/docs/category/tutorial---extras"><span title="Tutorial - Extras" class="categoryLinkLabel_W154">Tutorial - Extras</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/HIVE-R-Docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/HIVE-R-Docs/docs/category/production-readiness"><span>Production Readiness</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Phase 7: CI/CD &amp; Automation</span></li></ul></nav><div class="theme-doc-markdown markdown"><p>**</p>
+<p><strong>⏱️ Time</strong>: 8-10 hours</p>
+<p><strong>💰 Budget</strong>: $15-20</p>
+<p><strong>🎯 Goal</strong>: Automated testing, deployment, and changelog generation</p>
+<p><strong>🤖 AI Workers</strong>: HIVE-R SRE + Builder + Tech Writer agents</p>
+<p><strong>🔄 Step 7.1: Set Up GitHub Actions CI Pipeline</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE agent.</p>
+<p>CONTEXT:</p>
+<p>Currently, we run tests manually. We need automated CI on every push/PR.</p>
+<p>TASK:</p>
+<p>Create GitHub Actions workflows for:</p>
+<p>  1. CI (test): Run on every push and PR</p>
+<p>     - Install dependencies</p>
+<p>     - Run linter (ESLint)</p>
+<p>     - Run type check (TypeScript)</p>
+<p>     - Run tests (Vitest)</p>
+<p>     - Run security audit (npm audit)</p>
+<p>     - Generate coverage report</p>
+<p>     - Comment coverage on PR</p>
+<p>  2. CI (build): Verify build succeeds</p>
+<p>     - Build backend (npm run build)</p>
+<p>     - Build frontend (cd client &amp;&amp; npm run build)</p>
+<p>     - Build Docker image</p>
+<p>  3. CI (docker): Test Docker image</p>
+<p>     - Build image</p>
+<p>     - Run container</p>
+<p>     - Run smoke tests against container</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>.github/workflows/ci-test.yml</p>
+</li>
+<li class="">
+<p>.github/workflows/ci-build.yml</p>
+</li>
+<li class="">
+<p>.github/workflows/ci-docker.yml</p>
+</li>
+<li class="">
+<p>Badge in README.md (build status)</p>
+</li>
+<li class="">
+<p>Documentation: docs/development/ci-cd.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review the CI workflows:</p>
+<p>☐ Runs on pull_request and push to main</p>
+<p>☐ Uses caching (node_modules, npm cache)</p>
+<p>☐ Fails if tests fail (blocks merge)</p>
+<p>☐ Posts results to PR (coverage, lint errors)</p>
+<p><strong>Create workflows</strong>:</p>
+<header><h1>.github/workflows/ci-test.yml</h1></header>
+<p>name: CI - Test</p>
+<p>on:</p>
+<p>  push:</p>
+<p>    branches: [main]</p>
+<p>  pull_request:</p>
+<p>    branches: [main]</p>
+<p>jobs:</p>
+<p>  test:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>      - uses: actions/setup-node@v3</p>
+<p>        with:</p>
+<p>          node-version: &#x27;18&#x27;</p>
+<p>          cache: &#x27;npm&#x27;</p>
+<p>      - name: Install dependencies</p>
+<p>        run: npm ci</p>
+<p>      - name: Run linter</p>
+<p>        run: npm run lint</p>
+<p>      - name: Run type check</p>
+<p>        run: npm run type-check</p>
+<p>      - name: Run tests</p>
+<p>        run: npm test</p>
+<p>      - name: Generate coverage</p>
+<p>        run: npm run test<!-- -->:coverage</p>
+<p>      - name: Upload coverage</p>
+<p>        uses: codecov/codecov-action@v3</p>
+<p>        with:</p>
+<p>          files: ./coverage/coverage-final.json</p>
+<p><strong>Test CI</strong>:</p>
+<h1>Create a test PR with intentional failure</h1>
+<p>git checkout -b test-ci</p>
+<p>echo &quot;const x: number = &#x27;string&#x27;;&quot; &gt;&gt; src/test-fail.ts</p>
+<p>git add . &amp;&amp; git commit -m &quot;test: trigger CI&quot;</p>
+<p>git push origin test-ci</p>
+<h1>Open PR on GitHub</h1>
+<h1>CI should fail with type error</h1>
+<h1>Fix and verify CI passes</h1>
+<p>rm src/test-fail.ts</p>
+<p>git commit -am &quot;fix: remove test failure&quot;</p>
+<p>git push</p>
+<h1>CI should pass, PR should show green checkmark</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ CI runs on every PR</p>
+<p>☐ Fails on test failures</p>
+<p>☐ Fails on lint errors</p>
+<p>☐ Fails on type errors</p>
+<p>☐ Coverage report posted to PR</p>
+<p><strong>📊 Log Cost</strong>: ~$0.10 (30K tokens)</p>
+<p><strong>🚀 Step 7.2: Set Up Automated Deployment (CD)</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE agent.</p>
+<p>CONTEXT:</p>
+<p>Manual deployments are error-prone and slow. Automate production deployments.</p>
+<p>TASK:</p>
+<p>Create deployment workflows:</p>
+<p>  1. Deploy to staging (on push to main)</p>
+<p>     - Build Docker image</p>
+<p>     - Push to registry (Docker Hub, ECR, GCR)</p>
+<p>     - Deploy to staging server (SSH or K8s)</p>
+<p>     - Run smoke tests</p>
+<p>     - Notify Slack</p>
+<p>  2. Deploy to production (on git tag)</p>
+<p>     - Build Docker image (with version tag)</p>
+<p>     - Push to registry</p>
+<p>     - Deploy with blue-green strategy</p>
+<p>     - Run health checks</p>
+<p>     - Rollback if health checks fail</p>
+<p>     - Notify Slack with deployment link</p>
+<p>DEPLOYMENT TARGET:</p>
+<p>[Choose based on your infrastructure]</p>
+<ul>
+<li class="">
+<p>Option A: Docker Swarm on VPS</p>
+</li>
+<li class="">
+<p>Option B: Kubernetes cluster</p>
+</li>
+<li class="">
+<p>Option C: Cloud Run / ECS Fargate</p>
+</li>
+</ul>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>.github/workflows/deploy-staging.yml</p>
+</li>
+<li class="">
+<p>.github/workflows/deploy-production.yml</p>
+</li>
+<li class="">
+<p>Deployment scripts: scripts/deploy.sh</p>
+</li>
+<li class="">
+<p>Rollback scripts: scripts/rollback.sh</p>
+</li>
+<li class="">
+<p>Documentation: docs/operations/deployment.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review deployment strategy:</p>
+<p>☐ Staging deploys automatically (for testing)</p>
+<p>☐ Production requires manual tag (protection)</p>
+<p>☐ Has rollback mechanism</p>
+<p>☐ Health checks verify deployment success</p>
+<p>☐ Secrets managed securely (GitHub Secrets)</p>
+<p><strong>Setup deployment</strong> (Docker Swarm example):</p>
+<h1>.github/workflows/deploy-production.yml</h1>
+<p>name: Deploy to Production</p>
+<p>on:</p>
+<p>  push:</p>
+<p>    tags:</p>
+<p>      - &#x27;v*&#x27;  # Trigger on version tags (v1.0.0)</p>
+<p>jobs:</p>
+<p>  deploy:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>      - name: Build Docker image</p>
+<p>        run: |</p>
+<p>          docker build -t hive-r:${{ github.ref_name }} .</p>
+<p>          docker tag hive-r:${{ github.ref_name }} hive-r<!-- -->:latest</p>
+<p>      - name: Push to registry</p>
+<p>        run: |</p>
+<p>          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin</p>
+<p>          docker push hive-r:${{ github.ref_name }}</p>
+<p>          docker push hive-r<!-- -->:latest</p>
+<p>      - name: Deploy to production</p>
+<p>        uses: appleboy/ssh-action@master</p>
+<p>        with:</p>
+<p>          host: ${{ secrets.PROD_HOST }}</p>
+<p>          username: ${{ secrets.PROD_USER }}</p>
+<p>          key: ${{ secrets.PROD_SSH_KEY }}</p>
+<p>          script: |</p>
+<p>            docker pull hive-r:${{ github.ref_name }}</p>
+<p>            docker service update --image hive-r:${{ github.ref_name }} hive_app</p>
+<p>      - name: Wait for health check</p>
+<p>        run: |</p>
+<p>          sleep 30</p>
+<p>          curl -f <a href="https://api.hive-r.com/health/ready" target="_blank" rel="noopener noreferrer" class="">https://api.hive-r.com/health/ready</a> || exit 1</p>
+<p>      - name: Notify Slack</p>
+<p>        uses: 8398a7/action-slack@v3</p>
+<p>        with:</p>
+<p>          status: ${{ job.status }}</p>
+<p>          text: &#x27;Deployed ${{ github.ref_name }} to production&#x27;</p>
+<p>          webhook_url: ${{ secrets.SLACK_WEBHOOK }}</p>
+<p><strong>Test deployment</strong>:</p>
+<h1>Create a version tag</h1>
+<p>git tag v1.0.0</p>
+<p>git push origin v1.0.0</p>
+<h1>Watch GitHub Actions</h1>
+<h1>Should build, push, deploy, and verify</h1>
+<h1>Check production</h1>
+<p>curl <a href="https://api.hive-r.com/health/ready" target="_blank" rel="noopener noreferrer" class="">https://api.hive-r.com/health/ready</a></p>
+<h1>Should return healthy status</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Staging deploys on every push to main</p>
+<p>☐ Production deploys on version tags</p>
+<p>☐ Deployment succeeds without manual intervention</p>
+<p>☐ Rollback tested and working</p>
+<p>☐ Slack notifications work</p>
+<p><strong>📊 Log Cost</strong>: ~$0.12 (35K tokens)</p>
+<p><strong>📝 Step 7.3: Automated Changelog Generation</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the Tech Writer agent.</p>
+<p>CONTEXT:</p>
+<p>Tracking changes manually is tedious. Automate changelog from git commits.</p>
+<p>TASK:</p>
+<p>Implement automated changelog generation:</p>
+<p>  - Use Conventional Commits format (feat:, fix:, docs:, etc)</p>
+<p>  - Generate CHANGELOG.md on every release</p>
+<p>  - Group by type (Features, Bug Fixes, Breaking Changes)</p>
+<p>  - Link to GitHub issues/PRs</p>
+<p>  - Include contributor credits</p>
+<p>TOOLS:</p>
+<ul>
+<li class="">
+<p>standard-version or semantic-release</p>
+</li>
+<li class="">
+<p>Commit message linting (commitlint)</p>
+</li>
+<li class="">
+<p>Pre-commit hook to enforce format</p>
+</li>
+</ul>
+<p>COMMIT FORMAT:</p>
+<p>type(scope): subject</p>
+<p>feat(auth): add JWT refresh token support</p>
+<p>fix(cache): resolve Redis connection leak</p>
+<p>docs(readme): update installation instructions</p>
+<p>BREAKING CHANGE: API endpoint /v1/chat renamed to /v2/chat</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>Commitlint configuration (.commitlintrc.json)</p>
+</li>
+<li class="">
+<p>Husky pre-commit hooks</p>
+</li>
+<li class="">
+<p>GitHub Action to generate changelog</p>
+</li>
+<li class="">
+<p>Updated CHANGELOG.md</p>
+</li>
+<li class="">
+<p>Documentation: docs/development/commit-conventions.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review commit conventions:</p>
+<p>☐ Format is clear and easy to follow</p>
+<p>☐ Covers common types (feat, fix, docs, chore)</p>
+<p>☐ Breaking changes clearly marked</p>
+<p>☐ Examples provided for team</p>
+<p><strong>Setup changelog automation</strong>:</p>
+<h1>Install tools</h1>
+<p>npm install -D @commitlint/cli @commitlint/config-conventional husky standard-version</p>
+<h1>Configure commitlint</h1>
+<p>cat &gt; .commitlintrc.json &lt;&lt; &#x27;EOF&#x27;</p>
+<p>{</p>
+<p>  &quot;extends&quot;: [&quot;@commitlint/config-conventional&quot;]</p>
+<p>}</p>
+<p>EOF</p>
+<h1>Setup husky hooks</h1>
+<p>npx husky install</p>
+<p>npx husky add .husky/commit-msg &#x27;npx --no -- commitlint --edit &quot;$1&quot;&#x27;</p>
+<h1>Add version script to package.json</h1>
+<p>npm pkg set scripts.release=&quot;standard-version&quot;</p>
+<p><strong>Test changelog</strong>:</p>
+<h1>Make commits with conventional format</h1>
+<p>git commit -m &quot;feat(cache): implement semantic caching&quot;</p>
+<p>git commit -m &quot;fix(auth): resolve token expiration bug&quot;</p>
+<h1>Generate changelog</h1>
+<p>npm run release</p>
+<h1>Check CHANGELOG.md</h1>
+<p>cat CHANGELOG.md</p>
+<h1>Should show grouped commits with links</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Commit messages validated (can&#x27;t commit without format)</p>
+<p>☐ Changelog auto-generated</p>
+<p>☐ Changelog is well-formatted and readable</p>
+<p>☐ Version bumped automatically (semantic versioning)</p>
+<p><strong>📊 Log Cost</strong>: ~$0.06 (20K tokens)</p>
+<p><strong>🔐 Step 7.4: Automated Security Scanning</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the Security agent.</p>
+<p>CONTEXT:</p>
+<p>New vulnerabilities are discovered daily. Automate security scanning.</p>
+<p>TASK:</p>
+<p>Add security scanning to CI/CD:</p>
+<p>  1. Dependency scanning (npm audit, Snyk)</p>
+<p>     - Scan on every PR</p>
+<p>     - Fail if critical vulnerabilities</p>
+<p>     - Auto-create PRs to update vulnerable deps</p>
+<p>  2. Code scanning (CodeQL, Semgrep)</p>
+<p>     - Scan for common vulnerabilities (SQL injection, XSS, etc)</p>
+<p>     - Scan for secrets accidentally committed</p>
+<p>     - Fail if high-severity issues</p>
+<p>  3. Container scanning (Trivy, Grype)</p>
+<p>     - Scan Docker images for OS vulnerabilities</p>
+<p>     - Fail if critical CVEs</p>
+<p>  4. License compliance</p>
+<p>     - Ensure all dependencies have compatible licenses</p>
+<p>     - No GPL in commercial project (if applicable)</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>.github/workflows/security.yml</p>
+</li>
+<li class="">
+<p>Snyk integration (or GitHub Dependabot)</p>
+</li>
+<li class="">
+<p>CodeQL configuration</p>
+</li>
+<li class="">
+<p>Container scanning in CI</p>
+</li>
+<li class="">
+<p>Security policy: SECURITY.md</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review security scanning config:</p>
+<p>☐ Scans run on every PR (not just main)</p>
+<p>☐ Doesn&#x27;t block on low-severity issues</p>
+<p>☐ Has process for triaging vulnerabilities</p>
+<p>☐ Auto-updates non-breaking security fixes</p>
+<p><strong>Setup security scanning</strong>:</p>
+<h1>.github/workflows/security.yml</h1>
+<p>name: Security Scanning</p>
+<p>on:</p>
+<p>  pull_request:</p>
+<p>  schedule:</p>
+<p>    - cron: &#x27;0 0 * * 0&#x27;  # Weekly</p>
+<p>jobs:</p>
+<p>  dependencies:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>      - name: Run npm audit</p>
+<p>        run: npm audit --audit-level=high</p>
+<p>  code-scanning:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>      - uses: github/codeql-action/init@v2</p>
+<p>        with:</p>
+<p>          languages: javascript, typescript</p>
+<p>      - uses: github/codeql-action/analyze@v2</p>
+<p>  container-scanning:</p>
+<p>    runs-on: ubuntu-latest</p>
+<p>    steps:</p>
+<p>      - uses: actions/checkout@v3</p>
+<p>      - name: Build image</p>
+<p>        run: docker build -t hive-r<!-- -->:test<!-- --> .</p>
+<p>      - name: Scan with Trivy</p>
+<p>        uses: aquasecurity/trivy-action@master</p>
+<p>        with:</p>
+<p>          image-ref: hive-r<!-- -->:test</p>
+<p>          severity: &#x27;CRITICAL,HIGH&#x27;</p>
+<p><strong>Test security scanning</strong>:</p>
+<h1>Trigger manually</h1>
+<p>git push origin your-branch</p>
+<h1>Check GitHub Actions -&gt; Security tab</h1>
+<h1>Should see scanning results</h1>
+<h1>Intentionally add a vulnerable dependency</h1>
+<p>npm install express@3.0.0  # Old version with CVEs</p>
+<h1>Push and verify CI fails with vulnerability report</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Security scans run automatically</p>
+<p>☐ Vulnerabilities detected correctly</p>
+<p>☐ CI blocks critical vulnerabilities</p>
+<p>☐ Dependabot/Snyk creates auto-update PRs</p>
+<p><strong>📊 Log Cost</strong>: ~$0.08 (25K tokens)</p>
+<p><strong>📊 Step 7.5: Automated Performance Testing</strong></p>
+<p><strong>Your Instruction</strong> (in Cursor):</p>
+<p>Consult the SRE and Data Analyst agents.</p>
+<p>CONTEXT:</p>
+<p>Performance regressions slip in silently. Catch them early with automated tests.</p>
+<p>TASK:</p>
+<p>Add performance testing to CI:</p>
+<p>  1. Load testing (Artillery, K6)</p>
+<p>     - Run on every release candidate</p>
+<p>     - Test: 100 concurrent users, 5 min duration</p>
+<p>     - Assert: p95 latency &lt;1s, error rate &lt;1%</p>
+<p>     - Compare against baseline (detect regressions)</p>
+<p>  2. Frontend performance (Lighthouse CI)</p>
+<p>     - Run on every PR that touches frontend</p>
+<p>     - Assert: Performance score &gt;90</p>
+<p>     - Track metrics over time</p>
+<p>  3. Database performance</p>
+<p>     - Benchmark critical queries</p>
+<p>     - Assert: &lt;50ms for reads, &lt;100ms for writes</p>
+<p>     - Detect N+1 queries</p>
+<p>DELIVERABLES:</p>
+<ul>
+<li class="">
+<p>.github/workflows/performance.yml</p>
+</li>
+<li class="">
+<p>Load test scripts: tests/performance/load-test.yml</p>
+</li>
+<li class="">
+<p>Performance budgets in CI</p>
+</li>
+<li class="">
+<p>Grafana dashboard for performance trends</p>
+</li>
+<li class="">
+<p>Alert if regression detected</p>
+</li>
+</ul>
+<p><strong>⏸️ YOUR APPROVAL GATE</strong>:</p>
+<p>Review performance thresholds:</p>
+<p>☐ Realistic (based on current performance)</p>
+<p>☐ Not too strict (allows for normal variance)</p>
+<p>☐ Catches real regressions (10% slower = fail)</p>
+<p><strong>Setup performance testing</strong>:</p>
+<h1>tests/performance/load-test.yml (Artillery)</h1>
+<p>config:</p>
+<p>  target: &quot;<a href="http://localhost:3000" target="_blank" rel="noopener noreferrer" class="">http://localhost:3000</a>&quot;</p>
+<p>  phases:</p>
+<p>    - duration: 60</p>
+<p>      arrivalRate: 10</p>
+<p>      name: &quot;Warm up&quot;</p>
+<p>    - duration: 300</p>
+<p>      arrivalRate: 20</p>
+<p>      name: &quot;Sustained load&quot;</p>
+<p>scenarios:</p>
+<p>  - name: &quot;Chat flow&quot;</p>
+<p>    flow:</p>
+<p>      - post:</p>
+<p>          url: &quot;/chat&quot;</p>
+<p>          json:</p>
+<p>            messages: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;test&quot;}]</p>
+<p>          expect:</p>
+<p>            - statusCode: 200</p>
+<p>            - contentType: json</p>
+<p>            - hasProperty: response</p>
+<h1>Add to CI</h1>
+<h1>.github/workflows/performance.yml</h1>
+<ul>
+<li class="">name: Run load test</li>
+</ul>
+<p>  run: |</p>
+<p>    npm start &amp;</p>
+<p>    sleep 10</p>
+<p>    npx artillery run tests/performance/load-test.yml --output report.json</p>
+<p>    npx artillery report report.json</p>
+<p>    # Check assertions</p>
+<p>    p95=$(jq &#x27;.aggregate.latency.p95&#x27; report.json)</p>
+<p>    if [ $p95 -gt 1000 ]; then</p>
+<p>      echo &quot;Performance regression: p95 latency ${p95}ms &gt; 1000ms&quot;</p>
+<p>      exit 1</p>
+<p>    fi</p>
+<p><strong>Test performance CI</strong>:</p>
+<h1>Run load test locally first</h1>
+<p>npm start &amp;</p>
+<p>npx artillery run tests/performance/load-test.yml</p>
+<h1>Check report</h1>
+<h1>Should pass with p95 &lt;1s</h1>
+<h1>Introduce performance regression (sleep in code)</h1>
+<h1>Push and verify CI fails</h1>
+<p><strong>✅ Validation</strong>:</p>
+<p>☐ Performance tests run in CI</p>
+<p>☐ Regressions detected</p>
+<p>☐ Frontend performance tracked</p>
+<p>☐ Database benchmarks pass</p>
+<p><strong>📊 Log Cost</strong>: ~$0.10 (30K tokens)</p>
+<p><strong>✅ Phase 7 Complete When:</strong></p>
+<p>☐ CI runs tests on every PR</p>
+<p>☐ CD deploys to staging/production automatically</p>
+<p>☐ Changelog auto-generated</p>
+<p>☐ Security scanning active</p>
+<p>☐ Performance testing in CI</p>
+<p>☐ All pipelines passing</p>
+<p>☐ Total cost &lt;$20 for Phase 7</p>
+<p><strong>💡 Key Insight</strong>: Automation = Confidence. Ship faster with fewer bugs.</p>
+<p><strong>🎉 MAJOR MILESTONE</strong>: Your development workflow is now professional-grade.</p>
+<p>**</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/production-readiness/08-phase-7-cicd.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/HIVE-R-Docs/docs/production-readiness/phase-6-performance"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Phase 6: Performance Optimization</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/HIVE-R-Docs/docs/production-readiness/phase-8-deployment"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Phase 8: Production Deployment</div></a></nav></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/docs/intro">Tutorial</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/HIVE-R-Docs/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 HIVE-R. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

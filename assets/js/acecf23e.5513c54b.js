@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunktemp_docs=globalThis.webpackChunktemp_docs||[]).push([[1903],{1912(s){s.exports=JSON.parse('{"blogBasePath":"/HIVE-R-Docs/blog","blogTitle":"Blog","authorsListPath":"/HIVE-R-Docs/blog/authors"}')}}]);
