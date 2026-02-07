@@ -1,0 +1,8 @@
+{
+    "label": "Production Readiness",
+    "position": 2,
+    "link": {
+        "type": "generated-index",
+        "description": "Comprehensive guide to getting HIVE-R ready for production."
+    }
+}
